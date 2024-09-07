@@ -1,0 +1,8 @@
+langchain-community
+ctransformers
+pypdf
+langchain
+pinecone
+Sentence-transformers
+panda
+numpy
