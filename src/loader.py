@@ -27,14 +27,13 @@ def download_hugging_face_embeddings():
 
 
 
-
-
-def store_in_faiss_vector_db(embedding_model, index_path,pdf_chunks):
+def store_in_faiss_vector_db(pdf_chunks,embedding_model, index_path):
     # Create FAISS vector store from the embeddings
     vector_store = FAISS.from_documents(pdf_chunks,embedding_model)
     # Save the vector store locally
     vector_store.save_local(index_path)
     return vector_store
+
 
 
 
