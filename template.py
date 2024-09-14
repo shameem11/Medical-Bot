@@ -8,14 +8,14 @@ list_of_files =[
     "src/__init__.py",
     "src/prompt.py",
     "setup.py",
-    "research/training.ipynb",
+    "research/Training.ipynb",
     "streamlit.py",
     "store_index.py"
 
 ]
 
 for file_path in list_of_files:
-    file_path=Path(file_path)
+    file_path=Path(file_path) # path class help to detect the the OS
     filedir,filename = os.path.split(file_path)
 
     if filedir !="":

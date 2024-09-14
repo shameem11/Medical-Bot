@@ -3,6 +3,4 @@ ctransformers
 pypdf
 langchain==0.0.225
 Sentence-transformers
-
-
--e.
+-e . 
