@@ -5,17 +5,19 @@ import logging
 logging.basicConfig(level=logging.INFO,format="[%(asctime)s]:%(message)s:")
 
 list_of_files =[
-    "src/__init__.py",
-    "src/prompt.py",
+    "src/ __init__.py",
+    "src/ prompt.py",
+    "src/ loader.py"
     "setup.py",
     "research/Training.ipynb",
-    "streamlit.py",
+    "templates/bot.html",
+    "static/style.css"
     "store_index.py"
 
 ]
 
 for file_path in list_of_files:
-    file_path=Path(file_path) # path class help to detect the the OS
+    file_path=Path(file_path) # path class help to detect the OS this privent the unicorn error 
     filedir,filename = os.path.split(file_path)
 
     if filedir !="":

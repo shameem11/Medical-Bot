@@ -3,8 +3,6 @@
 # create a evn 
 >conda create -n Medical-Bot python=3.9 -y
 
-conda activate MedicalBot
-
 >conda activate MedicalBot 
 
 ## step 2 install Requirements.txt

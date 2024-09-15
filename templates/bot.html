@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Medical Chatbot</title>
+    <link rel="stylesheet" href="static\style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  </head>
+  <body>
+    <div class="chatbot">
+      <header>
+        <h2>Medical Chatbot</h2>
+      </header>
+
+      <ul class="chatbox" id="chatbox">
+        <li class="chat incoming">
+          <span class="material-symbols-outlined">smart_toy</span>
+          <p>Hi there 👋<br>How can I assist you today?</p>
+        </li>
+      </ul>
+
+      <div class="chat-input">
+        <textarea id="text" placeholder="Enter a message..." spellcheck="false" required></textarea>
+        <button type="submit" id="send-btn" class="material-symbols-rounded">send</button>
+      </div>
+    </div>
+
+    <!-- Add JavaScript for AJAX functionality -->
+    <script>
+      document.getElementById("send-btn").addEventListener("click", function() {
+        const inputText = document.getElementById("text").value;
+        
+        if(inputText.trim() !== "") {
+          // Add the user's message to the chatbox
+          const chatbox = document.getElementById("chatbox");
+          const userMessage = document.createElement("li");
+          userMessage.className = "chat outgoing";
+          userMessage.innerHTML = `<p>${inputText}</p>`;
+          chatbox.appendChild(userMessage);
+
+          // Send the message to the backend using Fetch API
+          fetch("/get", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `msg=${encodeURIComponent(inputText)}`
+          })
+          .then(response => response.text())
+          .then(data => {
+            // Add the bot's response to the chatbox
+            const botMessage = document.createElement("li");
+            botMessage.className = "chat incoming";
+            botMessage.innerHTML = `<span class="material-symbols-outlined">smart_toy</span><p>${data}</p>`;
+            chatbox.appendChild(botMessage);
+
+            // Clear the input field
+            document.getElementById("text").value = "";
+          })
+          .catch(error => {
+            console.error("Error:", error);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
