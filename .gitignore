@@ -165,9 +165,12 @@ cython_debug/
 "index.pkl"
 "Model"
 
+<<<<<<< HEAD
 llama-2-7b-chat.ggmlv3.q4_0.bin
 
 Medical_Bot.egg-info"
 "Model" 
 "index.faiss" 
 *.pkl
+=======
+>>>>>>> origin/main
