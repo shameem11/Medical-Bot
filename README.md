@@ -4,6 +4,11 @@
 >conda create -n Medical-Bot python=3.9 -y
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+conda activate MedicalBot
+
+>>>>>>> origin/main
 =======
 conda activate MedicalBot
 

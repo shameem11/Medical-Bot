@@ -3,9 +3,7 @@ ctransformers
 pypdf
 langchain==0.0.225
 Sentence-transformers
-<<<<<<< HEAD
 flask
 faiss-gpu
-=======
->>>>>>> origin/main
+
 -e . 
