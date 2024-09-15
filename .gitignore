@@ -173,4 +173,8 @@ Medical_Bot.egg-info"
 "index.faiss" 
 *.pkl
 =======
+
 >>>>>>> origin/main
+*.ipynb
+*.py
+FAISS_index/
