@@ -5,8 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO,format="[%(asctime)s]:%(message)s:")
 
 list_of_files =[
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     "src/ __init__.py",
     "src/ prompt.py",
     "src/ loader.py"
@@ -14,32 +13,12 @@ list_of_files =[
     "research/Training.ipynb",
     "templates/bot.html",
     "static/style.css"
-=======
-=======
->>>>>>> origin/main
-    "src/__init__.py",
-    "src/prompt.py",
-    "setup.py",
-    "research/Training.ipynb",
-    "streamlit.py",
-<<<<<<< HEAD
->>>>>>> origin/main
-=======
->>>>>>> origin/main
-    "store_index.py"
+
 
 ]
 
 for file_path in list_of_files:
-<<<<<<< HEAD
-<<<<<<< HEAD
     file_path=Path(file_path) # path class help to detect the OS this privent the unicorn error 
-=======
-    file_path=Path(file_path) # path class help to detect the the OS
->>>>>>> origin/main
-=======
-    file_path=Path(file_path) # path class help to detect the the OS
->>>>>>> origin/main
     filedir,filename = os.path.split(file_path)
 
     if filedir !="":
